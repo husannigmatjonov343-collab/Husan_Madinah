@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 app = FastAPI(title="Madina Munavvara")
 
-app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
+app.mount("/css", StaticFiles(directory=os.path.join(BASE_DIR, "public", "css")), name="css")
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
 # ---------------------- MA'LUMOTLAR ----------------------
