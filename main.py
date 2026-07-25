@@ -1,15 +1,12 @@
-import os
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 app = FastAPI(title="Madina Munavvara")
 
-app.mount("/css", StaticFiles(directory=os.path.join(BASE_DIR, "public", "css")), name="css")
-templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
 # ---------------------- MA'LUMOTLAR ----------------------
 
@@ -125,4 +122,3 @@ async def haqida_sahifa(request: Request):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
-
