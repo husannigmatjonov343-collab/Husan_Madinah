@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Madinaning fazilatlari{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Madinaning fazilatlari</h1>
+        <p>Hadislarda zikr etilgan muqaddas shaharning fazilatlari va xususiyatlari</p>
+    </div>
+</section>
+
+<section class="container">
+    <div class="card-list">
+        {% for f in fazilatlar %}
+        <div class="info-card">
+            <div class="badge">{{ loop.index }}</div>
+            <h3>{{ f.sarlavha }}</h3>
+            <p>{{ f.matn }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

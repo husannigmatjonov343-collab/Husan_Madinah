@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Madina Munavvara{% endblock %}</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a href="/" class="logo">🕌 Madina <span>Munavvara</span></a>
+            <nav class="nav-links">
+                <a href="/">Bosh sahifa</a>
+                <a href="/fazilatlar">Fazilatlari</a>
+                <a href="/joylar">Muqaddas joylar</a>
+                <a href="/duolar">Duolar</a>
+                <a href="/haqida">Sayt haqida</a>
+            </nav>
+            <button class="burger" id="burger">☰</button>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>اَللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ</p>
+            <p>&copy; 2026 Madina Munavvara — Payg'ambarimiz shahri haqida ma'lumot sayti</p>
+        </div>
+    </footer>
+
+    <script>
+        const burger = document.getElementById('burger');
+        const navLinks = document.querySelector('.nav-links');
+        burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    </script>
+</body>
+</html>

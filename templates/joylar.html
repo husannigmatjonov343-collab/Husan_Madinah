@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Madinadagi muqaddas joylar{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Muqaddas ziyoratgoh joylar</h1>
+        <p>Madinada joylashgan muhim va fazilatli joylar</p>
+    </div>
+</section>
+
+<section class="container">
+    <div class="card-list">
+        {% for j in joylar %}
+        <div class="place-card">
+            <h3>📍 {{ j.nomi }}</h3>
+            <p>{{ j.tavsif }}</p>
+            <div class="fazilat-box">
+                <strong>Fazilati:</strong> {{ j.fazilati }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

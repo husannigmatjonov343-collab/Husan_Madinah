@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Madinaga oid duolar{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Muborak duolar</h1>
+        <p>Madinaga tashrif chog'ida o'qiladigan sunnatga muvofiq duolar</p>
+    </div>
+</section>
+
+<section class="container">
+    <div class="dua-list">
+        {% for d in duolar %}
+        <div class="dua-card">
+            <h3>{{ d.nomi }}</h3>
+            <p class="dua-arab">{{ d.arab }}</p>
+            <p class="dua-tarjima">{{ d.tarjima }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
